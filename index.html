@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+	<title>Home Automation</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+	<script src="script.js"></script>
+	<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="hero">
+            <nav>
+                <img src="images/menu.png" class="menu-img">
+                <img src="images/f.png" class="f-img" style="height: 50px;">
+                <ul>
+                    <li><a href="" style="color: aquamarine;">Home</a></li>
+                    <li><a href="#salle de bain">Salle de bain</a></li>
+                    <li><a href="#cuisine">Cuisine</a></li>
+                    <li><a href="#salon">Salon</a></li>
+                    <li><a href="#chambre">Chambre</a></li>
+                    <li><a href="#température">Température</a></li>
+                    <button type="button" onclick="toggleBtn()" id="btn"><span></span></button>
+                </ul>
+            </nav>
+            <div class="lamp-container">
+                <img src="images/lamp.png" class="lamp">
+                <img src="images/light.png" class="light" id="light">
+            </div>
+            <div class="text-container">
+            <h1>Smart Home</h1>
+            <p>Cette page web a pour but de contrôler à distance l'état des leds de chaque chambre et donner la température</p>
+        </div>
+        </div>
+        <script>
+            var btn=document.getElementById("btn");
+            var light=document.getElementById("light");
+            function toggleBtn(){
+                btn.classList.toggle("active")
+                light.classList.toggle("on");
+            }
+        </script>
+    <div id="salle de bain">
+        <nav style="background: pink;">
+            <ul>
+                <li><a href="" style="color: blue;font-size: x-large;">Home</a></li>
+            </ul>
+        </nav>
+        <h1 style="background:#fff ;color:blue; font-size:xx-large; margin-left: 45%;margin-top:1%;margin-bottom: 1%;">Salle de bain</h1>
+        <div class="container">
+           
+            <div class="row">
+                <div class="about-col-1">
+                    <div class="wrapper" style="background: rgba(8, 6, 6, 0.802);">	
+                        <div class="progress">
+                            <a class = "icon1" >
+                                <i class="fas fa-4x fa-bath"></i>
+                            </a>
+                            <div class= "toggle-btn" id="unact">
+                                <div class= "inner-circle">
+                                </div>
+                            </div>
+                            <div class= "toggle-btn active" id="act" >
+                                <div class= "inner-circle"></div>
+                                </div>
+                            </div>
+                        </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cuisine">
+        <nav style="background: pink;">
+            <ul>
+                <li><a href="" style="color: blue;font-size: x-large;">Home</a></li>
+            </ul>
+        </nav>
+        <h1 style="background:#fff;color:blue; font-size: xx-large;margin-left: 45%;margin-top:1%;margin-bottom: 1%;">Cuisine</h1>
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+    <div class="wrapper" style="background: rgba(8, 6, 6, 0.802);">	
+        <div class="progress">
+			<a class = "icon1" >
+				<i class="fas fa-4x fa-utensils"></i>
+			</a>
+			<div class= "toggle-btn1" id="unact1">
+				<div class= "inner-circle">
+				</div>
+			</div>
+			<div class= "toggle-btn1 active" id="act1" >
+				<div class= "inner-circle">
+				</div>
+			</div>
+		</div>
+        </div>
+        <div id="salon">
+            <nav style="background: pink;">
+                <ul>
+                    <li><a href="" style="color: blue;font-size: x-large;">Home</a></li>
+                </ul>
+            </nav>
+            <h1 style="background:#fff ;color:blue; font-size: xx-large;margin-left: 45%;margin-top:1%;margin-bottom: 1%;">Salon</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+        <div class="wrapper" style="background: rgba(8, 6, 6, 0.802);">	
+            <div class="progress">
+                <a class = "icon1" >
+                    <i class="fas fa-4x fa-tv"></i>
+                </a>
+                <div class= "toggle-btn2" id="unact2">
+                    <div class= "inner-circle">
+                    </div>
+                </div>
+                <div class= "toggle-btn2 active" id="act2" >
+                    <div class= "inner-circle">
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div id="chambre">
+                <nav style="background: pink;">
+                    <ul>
+                        <li><a href="" style="color: blue;font-size: x-large;">Home</a></li>
+                    </ul>
+                </nav>
+                <h1 style="background: #fff; ;color:blue; font-size: xx-large;margin-left: 45%;margin-top:1%;margin-bottom: 1%;">Chambre</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="about-col-1">
+            <div class="wrapper" style="background: rgba(8, 6, 6, 0.802);">	
+                <div class="progress">
+                    <a class = "icon1" >
+                        <i class="fas fa-4x fa-bed"></i>
+                    </a>
+                    <div class= "toggle-btn3" id="unact3">
+                        <div class= "inner-circle">
+                        </div>
+                    </div>
+                    <div class= "toggle-btn3 active" id="act3" >
+                        <div class= "inner-circle">
+                        </div>
+                    </div>
+                </div>	
+            </div>
+            </div>
+          
+    <div id="température">
+        <nav style="background: pink;">
+            <ul>
+                <li><a href="" style="color: blue;font-size: x-large;">Home</a></li>
+            </ul>
+        </nav>
+        <h1 style="background:#fff ;color:blue; font-size:xx-large; margin-left: 45%;
+        margin-top:1%;margin-bottom: 1%;">Température</h1>
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <div class="wrapper" style="background: rgba(8, 6, 6, 0.802);">	
+                        <div class="progress">
+                            <h1 style="color: #fff;">Temperature</h1>
+                            <p id="temperature-display"></p>
+                            <style>
+                                #temperature-display {
+                                  margin-top: 2%;
+                                  font-size: 24px;
+                                  font-weight: bold;
+                                  color: rgb(235, 3, 100);
+                                }
+                              </style>
+                            </div>
+                        </div> 
+                </div>
+</div> </div></div>
+    </body>
+</html>
